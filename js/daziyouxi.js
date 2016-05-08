@@ -3,7 +3,7 @@
 	var returnnew=$(".returnnew")[0];
 	var zanting=$(".zanting")[0];
 	var falg=true;
-	returnnew.onclick=function(){
+	returnnew.onclick=function(){//   重新开始
 		history.go(0)
 	}
 	var agin=$(".gameover")[0];
@@ -26,6 +26,8 @@ function game(box){
 	//this.getLetter(4);
 	this.Play();
 	this.key();
+
+	
 }
 game.prototype={
 	getLetter:function(num){//获取并制造出来掉下来的东西；
@@ -72,25 +74,33 @@ game.prototype={
 		}
 		zanting.onclick=function(){
 			if(!falg){
+
 				clearInterval(t)
 				falg=true;
 			}			
 		}
 	},
-	key:function(){
+	key:function(){//键盘事件
 		that=this;
 		document.onkeydown=function(e){
+			if(falg){
+				return;
+			}
 			var ev=e||window.event;
 			var scroes=$(".scroes")[0];
-			var scroe=0;
+			// var scroe=0;
 			var lett=String.fromCharCode(ev.keyCode);//将阿四课吗值转换为字符
-			//console.log(that.letterArr)
 			for(var i=0;i<that.letterArr.length;i++){
 				//console.log(that.letterArr[i])
 				if(that.letterArr[i].innerHTML==lett){    //这里错过，一定要加innerHTML
 					that.scroe+=1;       //消除后分数加1；
 					scroes.innerHTML=that.scroe;
 					// scroes.style.cssText="font-size:20px;font-family:幼圆;font-weight:600;"
+	// console.log(this.scroe)
+	// if(this.scroe>=10){
+	// 	this.speed+=10;
+	// 	this.level+=1;
+	// }
 					that.box.removeChild(that.letterArr[i]);
 					that.letterArr.splice(i,1);
 					break;

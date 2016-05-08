@@ -11,8 +11,8 @@ body,html{
 .beijing{
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/2.jpg);
-	background-size: 1220px 700px; 
+	background: url(../images/2.jpg) no-repeat;
+	background-size:100% 100%; 
 	position: relative;
 }
 .go{
@@ -21,6 +21,7 @@ body,html{
 	/*background: red;*/
 	position: absolute;
 	left:10px;
+	z-index: 10;
 	bottom: 100px;
 	line-height: 30px;
 	text-align: center;
@@ -32,6 +33,7 @@ body,html{
 	position: absolute;
 	left:35px;
 	bottom: 35px;
+	z-index: 10;
 	line-height: 30px;
 	text-align: center;
 	background:url(../images/zanting.png);
@@ -39,6 +41,7 @@ body,html{
 .returnnew{
 	height:70px;
 	width:70px;
+	z-index: 10;
 	position: absolute;
 	left:100px;
 	bottom:5px;
@@ -53,6 +56,7 @@ body,html{
 	left: 15px;
 	top:95px;
 	background:url(../images/defen.png);
+	z-index: 10;
 }
 .scroes{
 	position: absolute;
@@ -68,12 +72,13 @@ body,html{
 	font-family:迷你简萝卜;
 	font-weight: 500;
 	color: #fff;
-
+	
 }
 .life{
 	position: absolute;
 	top:30px;
 	left: 20px;
+	z-index: 10;
 	width: 250px;
 	height: 60px;
 	background:url(../images/xuekuang.png);
